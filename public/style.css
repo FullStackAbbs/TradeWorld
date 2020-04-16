@@ -1,0 +1,251 @@
+*{
+  box-sizing: border-box;
+}
+html{
+  font-size: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+  background-color:#B3E5FC;
+  color: white;
+}
+
+h1,h2,h3,h4,h5,p,a,span,input{
+  font-family: 'Raleway', sans-serif;
+
+}
+
+
+nav {
+  background-color:#0288D1;
+  display: block;
+  width: 100%;
+  float:left;
+  list-style-type: none;
+  font-family: 'Crimson Text';
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  font-size: 20px;
+}
+a{
+  width: 15%;
+  text-decoration-line: none;
+  color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 3rem;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+section{
+  width: 50%;
+  float:left;
+  display: block;
+  font-family: 'Raleway', sans-serif;
+}
+h2{
+  font-size: 4rem;
+  margin-left: 40%;
+  color: black;
+}
+
+#postIMG,#heart{
+  width:60%;
+  margin-left:20%;
+  margin-right:20%;
+  font-size: 2rem;
+}
+
+#heart{
+  width:60%;
+  margin-left:35%;
+  margin-right:20%;
+  font-size: 2rem;
+  color:black;
+}
+
+#postrow1a{
+  font-size: 2rem;
+  color: black;
+  display: block;
+  float: left;
+  width: 100%;
+  margin-top: 3%;
+  margin-left: 40%;
+}
+
+#postrow1b{
+  font-size: 2rem;
+  color: black;
+  display: block;
+  float: left;
+  width: 100%;
+margin-left: 40%;
+
+}
+#hearttrash{
+  color: black;
+  display: block;
+  float: left;
+  width: 100%;
+margin-left: 40%;
+font-size: 2rem;
+}
+
+ul{
+  list-style-type: none;
+}
+
+form>section{
+  display: block;
+  float: left;
+  width: 100%;
+  font-size: 2rem;
+  color: black;
+}
+.row1b{
+  display: block;
+  float: left;
+  width: 50%;
+
+}
+
+.row1b-d{
+  display: block;
+  float: left;
+  width: 30%;
+  margin-right:20%;
+}
+
+#row1b-df{
+  display: block;
+  float: left;
+  width: 30%;
+  margin-right:20%;
+}
+
+#move{
+  margin-left: 20%;
+}
+#pricepoints>p{
+  width: 33%;
+  display: block;
+  float: left;
+  text-align: center;
+}
+#pricepoints>input{
+  width: 23%;
+  display: block;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#tradestatus>p{
+  margin-top: 2%;
+}
+#tradestatus>select{
+  width: 23%;
+  display: block;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#entryConditions>p{
+  width: 25%;
+  display: block;
+  float: left;
+  text-align: center;
+}
+
+#entryConditions>select{
+  width: 22%;
+  display: block;
+  float: left;
+  margin-left:2%;
+  text-align: center;
+}
+#learnA,#learnB{
+  width: 100%;
+  display: block;
+  float: left;
+  color: black;
+  border: 2px solid black;
+}
+#learnA>p{
+  line-height: 1.6;
+  text-align: justify;
+  margin-left: 5%;
+  font-size: 2rem;
+
+}
+.part1{
+  column-count: 1;
+  column-gap: 50px;
+  padding: 50px;
+}
+.part1>p{
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  font-size: 2rem;
+}
+.star {
+  float: left;
+  width: 250px;
+  shape-outside: url(./img/pic1.jpg);
+  shape-margin:20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.part2,.part3{
+  column-count: 1;
+  column-gap: 50px;
+  padding: 50px;
+}
+.part2>p,.part3>p {
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  font-size: 2rem;}
+
+  .part2>li{
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+    font-size: 2rem;}
+
+#pic2{
+  width: 60%;
+  display: block;
+  float: left;
+  margin-left:20%;
+  margin-right:20%;
+}
+.moon{
+  line-height: 1.6;
+  text-align: justify;
+  margin: 2%;
+  font-size: 2rem;
+  background-color:#2badd9;
+  float: right;
+  shape-outside: inset(1% round 50%);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+button,input{
+  font-size: 3rem;
+  margin-left: 5%;
+
+}
+#logo{
+  width:800px;
+  height:200px;
+}
+.jumbotron{
+  color: black;
+}

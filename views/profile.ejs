@@ -1,0 +1,141 @@
+
+
+<%- include('header'); -%>
+
+
+
+<section>
+  <h2> Your Trading Log</h2>
+  <p id="heart"> Find all of your trading anaylsis below. Click post for details. </p>
+
+
+  <ul class="posts">
+  <% for(var i=0; i<posts.length; i++) {%>
+    <li>
+      <a href="/post/<%= posts[i]._id%>">
+        <img src="<%= posts[i].imgPath%>" id="postIMG">
+      </a>
+
+      <span id="postrow1a"> Financial Symbol: <%= posts[i].chartSymbol %></span>
+
+      <span id="postrow1b"> Position: <%= posts[i].position %></span>
+      <section id="hearttrash">
+        <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      </section>
+
+
+
+    </li>
+  <% } %>
+  </ul>
+</section>
+<section>
+  <form action="/qpPost" enctype="multipart/form-data" method="post">
+
+            <h2 id="move">Save your Trade Idea Here</h2>
+
+<section>
+  <h3> Instrument and Position</h3>
+  <p class="row1b"> Choose your financial instrument.</p>
+  <p class="row1b"> Do you plan to buy or sell ?</p>
+
+  <select class="row1b-d"  name="chartSymbol">
+<option value="EURUSD"> EURUSD (EURUSD)</option>
+<option value="USDJPY"> USDJPY (USDJPY) </option>
+<option value="AAPL"> AAPL (Apple) </option>
+<option value="US30"> US30 Index </option>
+<option value="DJI"> Dow Jones (DJI) </option>
+<option value="NASDAQ"> Nasadaq Composite (NASDAQ) </option>
+</select>
+
+
+<select id="row1b-df"  name="position">
+<option value="BUY"> BUY </option>
+<option value="SELL"> SELL </option>
+</select>
+</section>
+
+
+<section id="pricepoints">
+  <h3> Price Points</h3>
+  <p> Entry Price: </p>
+  <p> Exit Price - Take Proft: </p>
+  <p> Exit Price - Stop Loss: </p>
+
+  <input type="number" name="entry" step="0.00001"  placeholder="" value="">
+  <input type="number" name="takeprofit" step="0.00001" placeholder="" value="">
+   <input type="number" name="stoploss" step="0.00001" placeholder=""  value="">
+</section>
+
+<section id="tradestatus">
+  <h3> Trade Status (can be updated and changed)</h3>
+  <select  name="status">
+  <option value="WAITING"> WAITING </option>
+  <option value="IN PROGRESS">  IN-PROGRESS </option>
+  <option value="COMPLETED">  COMPLETED </option>
+  </select>
+
+  <select  name="winStatus">
+  <option value="WIN"> WIN </option>
+  <option value="LOSS">  LOSS </option>
+  <option value="BREAKEVEN"> BREAKEVEN </option>
+  </select>
+</section>
+
+<section id="entryConditions">
+  <h3> Entry Conditions:</h3>
+  <p> Entry Condition #1: </p>
+  <p> Entry Condition #2: </p>
+    <p> Entry Condition #3: </p>
+    <p> Entry Condition #4: </p>
+
+  <select  name="entryCond1">
+  <option value="DoubleTop"> Double Top/Double Bottom </option>
+  <option value="trendline">  Broken Trendline </option>
+  <option value="EngCandle"> Engulfing Candle </option>
+  <option value="EngCandle"> Engulfing Candle </option>
+  </select>
+
+
+  <select  name="entryCond2">
+  <option value="DoubleTop"> Double Top/Double Bottom </option>
+  <option value="trendline">  Broken Trendline </option>
+  <option value="EngCandle"> Engulfing Candle </option>
+  <option value="EngCandle"> Engulfing Candle </option>
+  </select>
+
+
+  <select  name="entryCond3">
+  <option value="DoubleTop"> Double Top/Double Bottom </option>
+  <option value="trendline">  Broken Trendline </option>
+  <option value="EngCandle"> Engulfing Candle </option>
+  <option value="news"> News Report </option>
+  </select>
+
+  <select  name="entryCond4">
+  <option value="DoubleTop"> Double Top/Double Bottom </option>
+  <option value="trendline">  Broken Trendline </option>
+  <option value="EngCandle"> Engulfing Candle </option>
+  <option value="news"> News Report </option>
+  </select>
+</section>
+
+<section>
+  <p> Comments </p>
+  <textarea name="caption" rows="8" cols="80"></textarea>
+</section>
+<section>
+  <input type="file" name="file-to-upload">
+  <input type="text" name="imageURL"  placeholder="imageURL" value="">
+  <input type="submit" value="Upload">
+</section>
+
+</form>
+
+
+</section>
+
+
+
+
+<%- include('footer'); -%>

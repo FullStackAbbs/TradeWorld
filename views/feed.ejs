@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .members-count,
+    .members-list,
+    .messages {
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .messages {
+      flex-shrink: 1;
+      overflow: auto;
+    }
+
+    .message {
+      padding: 5px 0;
+    }
+    .message .member {
+      display: inline-block;
+    }
+
+    .member {
+      padding-right: 10px;
+      position: relative;
+    }
+
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+    .message-form__button {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Feed</h1>
+  <ul class="posts">
+  <% for(var i=0; i<posts.length; i++) {%>
+    <li>
+      <a href="/post/<%= posts[i]._id%>">
+        <img src="<%= posts[i].imageURL%>">
+      </a>
+      <span><%= posts[i].caption %></span>
+      <span><%= posts[i].chartSymbol %></span>
+      <span><%= posts[i].position %></span>
+
+
+
+      <span><%= posts[i].entry %></span>
+      <span><%= posts[i].exit %></span>
+      <span><%= posts[i].stoploss %></span>
+      <span><%= posts[i].takeprofit %></span>
+      <span><%= posts[i].entryCond1 %></span>
+      <span><%= posts[i].entryCond2 %></span>
+      <span><%= posts[i].entryCond3 %></span>
+      <span><%= posts[i].entryCond4 %></span>
+      <span><%= posts[i].riskReward %></span>
+      <span><%= posts[i].status %></span>
+
+
+
+      <span><%= posts[i].likes %></span>
+      <% if(posts[i].heart === true){ %>
+      <span class="red"><i class="fa fa-heart" aria-hidden="true"></i></span>
+        <% } else { %>
+      <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+      <% } %>
+    </li>
+  <% } %>
+  </ul>
+<section id="chatBody">
+  <div class="members-count">-</div>
+  <div class="members-list">-</div>
+  <div class="messages"></div>
+  <form class="message-form" onsubmit="return false;">
+    <input class="message-form__input" placeholder="Type a message.." type="text"/>
+    <input class="message-form__button" value="Send" type="submit"/>
+  </form>
+
+</section>
+
+  <script src="/main.js"></script>
+</body>
+
+<%- include('footer'); -%>
