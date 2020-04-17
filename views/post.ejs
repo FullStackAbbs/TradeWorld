@@ -2,22 +2,46 @@
 <ul class="posts">
 <% for(var i=0; i<posts.length; i++) {%>
   <li>
-    <a href="/post/<%= posts[i]._id%>">
-      <img src="<%= posts[i].imgPath%>">
-    </a>
-    <span><%= posts[i].caption %></span>
-    <span><%= posts[i].caption %></span>
+    <p class="titleB">Chart Symbol:</p>
+    <p class="titleB">Position:</p>
+    <span class="returnB"><%= posts[i].chartSymbol %></span>
+    <span class="returnB"><%= posts[i].position %></span>
 
-    <span><%= posts[i].likes %></span>
-    <% if(posts[i].heart === true){ %>
-    <span class="red"><i class="fa fa-heart" aria-hidden="true"></i></span>
-      <% } else { %>
-    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-    <% } %>
-    <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+    <a href="/post/<%= posts[i]._id%>">
+      <img src="<%= posts[i].imageURL%>" class="feedimg">
+    </a>
+    <h3 class="headerBig"> Chart Comments:</h3>
+    <span id="caption"><%= posts[i].caption %></span>
+    <h3 class="headerBig"> Price Points</h3>
+    <p class="titleC"> Entry Price: </p>
+    <p class="titleC"> Exit Price - Take Proft: </p>
+    <p class="titleC"> Exit Price - Stop Loss: </p>
+    <span class="returnC"><%= posts[i].entry %></span>
+    <span class="returnC"><%= posts[i].stoploss %></span>
+    <span class="returnC"><%= posts[i].takeprofit %></span>
+
+
+
+<h3 class="headerBig"> Entry Conditions:</h3>
+<p class="titleE"> Entry Condition #1: </p>
+<p class="titleE"> Entry Condition #2: </p>
+  <p class="titleE"> Entry Condition #3: </p>
+  <p class="titleE"> Entry Condition #4: </p>
+    <span class="returnE"  ><%= posts[i].entryCond1 %></span>
+    <span class="returnE" ><%= posts[i].entryCond2 %></span>
+    <span class="returnE"><%= posts[i].entryCond3 %></span>
+    <span class="returnE"><%= posts[i].entryCond4 %></span>
+
+    <h3 class="headerBig"> Trade Statistics </h3>
+    <!-- <p class="titleC"> Risk </p>
+    <p class="titleC"> Reward</p> -->
+    <p class="titleD"> Risk to Reward Ratio</p>
+    <!-- <span class="returnC"><%= posts[i].risk %></span>
+    <span class="returnC"><%= posts[i].reward %></span> -->
+    <span class="returnD"><%= posts[i].riskReward %></span>
+
   </li>
 <% } %>
 </ul>
-  <a href="/profile">Return to Profile</a>
-  <a href="/feed">Return to Feed</a>
+
 <%- include('footer'); -%>

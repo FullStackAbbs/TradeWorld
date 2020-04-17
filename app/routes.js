@@ -71,6 +71,7 @@ app.post('/qpPost', upload.single('file-to-upload'), (req, res, next) => {
   db.collection('posts').save({posterId: uId,
     caption: req.body.caption, likes: 0,
      imageURL: req.body.imageURL,
+     username: req.body.username,
       chartSymbol:req.body.chartSymbol,
       position:req.body.position,
 
@@ -83,18 +84,18 @@ app.post('/qpPost', upload.single('file-to-upload'), (req, res, next) => {
          entryCond2:req.body.entryCond2,
          entryCond3:req.body.entryCond3,
          entryCond4:req.body.entryCond4,
-         risk: Math.abs( parseFloat(stoploss) - parseFloat(entry)),
-         reward: Math.abs( parseFloat(entry) - parseFloat(takeprofit)),
-         riskReward: Math.abs((Math.abs( parseFloat(stoploss) - parseFloat(entry)))/( Math.abs( parseFloat(entry) - parseFloat(takeprofit))))
-
-         // this how we can use calculation for the record board
-
-         imgPath: 'images/uploads/' + req.file.filename}, (err, result) => {
-    if (err) return console.log(err)
-    console.log('saved to database')
-    res.redirect('/profile')
-  })
-});
+         risk: Math.abs( parseFloat(req.body.stoploss) - parseFloat(req.body.entry)).toFixed(2),
+         reward: Math.abs( parseFloat(req.body.entry) - parseFloat(req.body.takeprofit)).toFixed(2),
+         riskReward: Math.abs((Math.abs( parseFloat(req.body.stoploss) - parseFloat(req.body.entry)))/( Math.abs( parseFloat(req.body.entry) - parseFloat(req.body.takeprofit)))).toFixed(2),
+         imgPath: 'images/uploads/' + req.file.filename}, (err, result) => { // WHERE IS GETTING THESE NUMBERS
+         // // this is reffering the the posts collection, when a file is upload in the profile.ejs there is a form with a method /qpPost on line 50
+         // when it does save a singular form into the database, the information its taken is as follows:
+         // // // (a) the current userId in sesstion (b) the body.caption of the form is saved (c) the file. path of whatever the particular file is, actually ends up being saved
+           if (err) return console.log(err)
+           console.log('saved to database')
+           res.redirect('/profile') // redirect method can be applied once the sumbit button is hit
+         })
+         });
 
 app.put('/posts', (req, res) => {
   db.collection('posts')

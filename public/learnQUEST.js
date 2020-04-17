@@ -1,6 +1,8 @@
 let questionBank;
 let totalQuestions;
 let question = document.querySelector('.question');
+let response = document.querySelector('h6');
+
 let answers = document.querySelector('.answers');
 const submitAnswer = document.querySelector('button');
 let totalCorrectAnswers = 0;
@@ -37,9 +39,8 @@ submitAnswer.addEventListener('click', () => {
   checkAnswer();
   questionBank.shift();
   if (questionBank.length === 0) {
-    alert(
-      `Ya done and you got ${totalCorrectAnswers} / ${totalQuestions} correct`
-    );
+    response.innerHTML = `Your are finished and you got ${totalCorrectAnswers} / ${totalQuestions} correct`;
+    ;
     return;
   }
   newQuestion();

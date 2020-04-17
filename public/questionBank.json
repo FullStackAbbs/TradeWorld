@@ -1,19 +1,19 @@
 {
   "question_bank": [
    {
-    "question": "What did you eat for dinner?",
-    "potential_answers": ["Pizza", "Burger", "Falafel", "Ice Cream"],
-    "correct_answer": "Ice Cream"
+    "question": "What does it mean to 'Go Long' ?? ",
+    "potential_answers": ["Buy", "Sit", "Sell", "Wait"],
+    "correct_answer": "Buy"
    },
    {
-    "question": "How do you code?",
-    "potential_answers": ["Ask Leon", "You Don't", "Traversy Media", "Cry"],
-    "correct_answer": "Cry"
+    "question": "In this currency pair, GBPUSD, what currency is the base currency ?",
+    "potential_answers": ["USD", "AUD", "GBP", "JPY"],
+    "correct_answer": "GBP"
    },
    {
-    "question": "How old are you?",
-    "potential_answers": ["3", "4", "5", "6"],
-    "correct_answer": "5"
+    "question": "What currency pair is for the Euro aganist the Yen ?",
+    "potential_answers": ["EURUSD", "EURJPY", "GBPAUD", "EURAUD"],
+    "correct_answer": "EURJPY"
    }
   ]
 }

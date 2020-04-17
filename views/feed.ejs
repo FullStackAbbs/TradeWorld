@@ -1,99 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
-  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <style>
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 13px;
-      display: flex;
-      flex-direction: column;
-      max-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    }
+<%- include('header'); -%>
 
-    .members-count,
-    .members-list,
-    .messages {
-      border: 1px solid #e4e4e4;
-      padding: 15px;
-      margin-bottom: 15px;
-    }
+  <h1>Welcome to the TradeWorld Community</h1>
+  <h4> Below your will see trading ideas of not just you but everyone on TW !</h4>
+  <h4> Feel free to chat and get to know your community members</h4>
 
-    .messages {
-      flex-shrink: 1;
-      overflow: auto;
-    }
-
-    .message {
-      padding: 5px 0;
-    }
-    .message .member {
-      display: inline-block;
-    }
-
-    .member {
-      padding-right: 10px;
-      position: relative;
-    }
-
-    .message-form {
-      display: flex;
-      flex-shrink: 0;
-    }
-    .message-form__input {
-      flex-grow: 1;
-      border: 1px solid #dfdfdf;
-      padding: 10px 15px;
-      font-size: 16px;
-    }
-    .message-form__button {
-      margin: 10px;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>Feed</h1>
+<section id="feedpost">
   <ul class="posts">
   <% for(var i=0; i<posts.length; i++) {%>
     <li>
+      <p name="username" id="username"> <%= user.local.email %></p>
       <a href="/post/<%= posts[i]._id%>">
-        <img src="<%= posts[i].imageURL%>">
+        <img class="feedimg"src="<%= posts[i].imageURL%>">
       </a>
-      <span><%= posts[i].caption %></span>
-      <span><%= posts[i].chartSymbol %></span>
-      <span><%= posts[i].position %></span>
+      <div class="info">
+        <p class="infoA" id="titleA"> Chart Symbol:</p>
+        <p class="infoA" id="titleA"> Position:</p>
+        <span class="infoA" id="returnA"><%= posts[i].chartSymbol %></span>
+        <span class="infoA" id="returnA"><%= posts[i].position %></span>
 
 
 
-      <span><%= posts[i].entry %></span>
-      <span><%= posts[i].exit %></span>
-      <span><%= posts[i].stoploss %></span>
-      <span><%= posts[i].takeprofit %></span>
-      <span><%= posts[i].entryCond1 %></span>
-      <span><%= posts[i].entryCond2 %></span>
-      <span><%= posts[i].entryCond3 %></span>
-      <span><%= posts[i].entryCond4 %></span>
-      <span><%= posts[i].riskReward %></span>
-      <span><%= posts[i].status %></span>
+<p class="infoA" id="titleA">Risk to Reward Ratio: </p>
+<p class="infoA" id="titleA">Status:</p>
+
+        <span class="infoA" id="returnA"><%= posts[i].riskReward %></span>
+        <span class="infoA" id="returnA"><%= posts[i].status %></span>
 
 
 
-      <span><%= posts[i].likes %></span>
-      <% if(posts[i].heart === true){ %>
-      <span class="red"><i class="fa fa-heart" aria-hidden="true"></i></span>
-        <% } else { %>
-      <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-      <% } %>
-    </li>
-  <% } %>
-  </ul>
+        <!-- <span><%= posts[i].likes %></span>
+        <% if(posts[i].heart === true){ %>
+        <span class="red"><i class="fa fa-heart" aria-hidden="true"></i></span>
+          <% } else { %>
+        <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+        <% } %> -->
+        </li>
+        <% } %>
+        </ul>
+      </div>
+
+
+
+
+
+
+</section>
+
+
 <section id="chatBody">
+  <h4>TradeWorld Community Chat</h4>
+  <h5>Please adhere to all guidlines, these name are to protect our users. Violators will be removed.</h5>
+
   <div class="members-count">-</div>
   <div class="members-list">-</div>
   <div class="messages"></div>
@@ -103,8 +60,4 @@
   </form>
 
 </section>
-
-  <script src="/main.js"></script>
-</body>
-
 <%- include('footer'); -%>

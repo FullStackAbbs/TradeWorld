@@ -12,11 +12,14 @@ body{
   color: white;
 }
 
-h1,h2,h3,h4,h5,p,a,span,input{
+h1,h2,h3,h4,h5,h6,p,a,span,input{
   font-family: 'Raleway', sans-serif;
 
 }
 
+h6{
+font-size: 3rem;
+}
 
 nav {
   background-color:#0288D1;
@@ -111,6 +114,7 @@ form>section{
   display: block;
   float: left;
   width: 50%;
+  color:black;
 
 }
 
@@ -248,4 +252,240 @@ button,input{
 }
 .jumbotron{
   color: black;
+}
+.members-count,
+.members-list,
+.messages {
+  border: 1px solid black;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 2rem;
+
+}
+
+.messages {
+  flex-shrink: 1;
+  overflow: auto;
+  font-size: 2rem;
+}
+
+.message {
+  padding: 5px 0;
+  font-size: 2rem;
+
+}
+.message .member {
+  font-size: 2rem;
+
+  display: inline-block;
+}
+
+.member {
+  font-size: 2rem;
+
+  padding-right: 10px;
+  position: relative;
+}
+
+.message-form {
+  font-size: 2rem;
+
+  display: flex;
+  flex-shrink: 0;
+}
+.message-form__input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 2rem;
+}
+.message-form__button {
+  margin: 10px;
+  font-size: 2rem;
+
+}
+#feedpost{
+  display: block;
+  float:left;
+  width: 70%;
+  /* border: 2px solid black; */
+  color: black;
+
+}
+#chatBody{
+  display: block;
+  float:left;
+  width: 30%;
+  color: black;
+}
+
+.feedimg{
+  display: block;
+  float:left;
+  width: 90%;
+  border: 2px solid black;
+  margin-left: 5%;
+  margin-right:5%;
+
+}
+
+.info{
+  display: block;
+  float:left;
+  width: 100%;
+  /* border: 2px solid black; */
+}
+h1,h4,h5{
+  color:black;
+}
+.infoA{
+  display: block;
+  float:left;
+  width: 50%;
+  text-align: center;
+  font-size: 2.2rem;
+}
+#titleA{
+background-color: #FF9800;
+border: 2px solid black;
+}
+#returnA{
+  background-color: #757575;
+  border: 2px solid black;
+
+}
+.titleB{
+background-color: #FF9800;
+border: 2px solid black;
+color:black;
+display: block;
+float: left;
+width: 30%;
+text-align: center;
+font-size: 3rem;
+margin: 4% 10%;
+}
+.returnB{
+background-color: #757575;
+border: 2px solid black;
+color:black;
+display: block;
+float: left;
+width: 30%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 3%;
+text-align: center;
+font-size: 3rem;
+}
+#username:{
+  font-size:2rem;
+}
+
+.headerBig{
+
+  background-color: #03A9F4;
+  border: 2px solid black;
+  color:black;
+  display: block;
+  float: left;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+  margin-top: 10%;
+
+  text-align: center;
+  font-size: 3rem;
+}
+#caption
+{
+  background-color: #FFFFFF;
+  border: 2px solid black;
+  color:black;
+  display: block;
+  float: left;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+  text-align: center;
+  font-size: 2rem;
+}
+.titleC
+{
+  background-color: #FF9800;
+  border: 2px solid black;
+  color:black;
+  display: block;
+  float: left;
+  width: 31%;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1% 1%;
+
+}
+.returnC{
+background-color: #757575;
+border: 2px solid black;
+color:black;
+display: block;
+float: left;
+width: 30%;
+margin: 1% 1%;
+
+text-align: center;
+font-size: 3rem;
+}
+.titleD
+{
+  background-color: #FF9800;
+  border: 2px solid black;
+  color:black;
+  display: block;
+  float: left;
+  width: 80%;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1% 10%;
+
+}
+.returnD{
+background-color: #757575;
+border: 2px solid black;
+color:black;
+display: block;
+float: left;
+width: 80%;
+margin: 1% 10%;
+
+text-align: center;
+font-size: 3rem;
+}
+.titleE
+{
+  background-color: #FF9800;
+  border: 2px solid black;
+  color:black;
+  display: block;
+  float: left;
+  width: 20%;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1% 2%;
+
+}
+.returnE{
+background-color: #757575;
+border: 2px solid black;
+color:black;
+display: block;
+float: left;
+width: 20%;
+margin: 1% 2%;
+
+text-align: center;
+font-size: 3rem;
+}
+#hide{
+  display: none;
 }

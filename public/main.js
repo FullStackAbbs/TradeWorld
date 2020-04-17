@@ -1,34 +1,36 @@
+// TRASH and possible Favorite functionality
 var heart = document.getElementsByClassName("fa fa-heart");
 var trash = document.getElementsByClassName("fa-trash");
 
-Array.from(heart).forEach(function(element) {
-      element.addEventListener('click', function(){
-        // const imgPath = this.parentNode.parentNode.childNodes[1].childNodes[1].src.split("/")[5];
-        const likes = parseFloat(this.parentNode.parentNode.childNodes[7].innerText)
-        const heart = this.parentNode.parentNode.childNodes[9].innerText
-
-        fetch('posts', {
-          method: 'put',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            'likes': likes,
-            'heart': heart
-          })
-        })
-        .then(response => {
-          if (response.ok) return response.json()
-        })
-        .then(data => {
-          console.log(data)
-          window.location.reload(true)
-        })
-      });
-});
+// Array.from(heart).forEach(function(element) {
+//       element.addEventListener('click', function(){
+//         // const imgPath = this.parentNode.parentNode.childNodes[1].childNodes[1].src.split("/")[5];
+//         const likes = parseFloat(this.parentNode.parentNode.childNodes[7].innerText)
+//         const heart = this.parentNode.parentNode.childNodes[9].innerText
+//
+//         fetch('posts', {
+//           method: 'put',
+//           headers: {'Content-Type': 'application/json'},
+//           body: JSON.stringify({
+//             'likes': likes,
+//             'heart': heart
+//           })
+//         })
+//         .then(response => {
+//           if (response.ok) return response.json()
+//         })
+//         .then(data => {
+//           console.log(data)
+//           window.location.reload(true)
+//         })
+//       });
+// });
 
 Array.from(trash).forEach(function(element) {
       element.addEventListener('click', function(){
         const imgPath = this.parentNode.parentNode.childNodes[1].childNodes[1].src.split("/")[5];
         // console.log('images/uploads/'imgPath.split("/")[5]);
+console.log(trash.parentElement)
 
         fetch('/delete', {
           method: 'delete',
@@ -44,6 +46,8 @@ Array.from(trash).forEach(function(element) {
       });
 });
 
+// Websocket for Chat Room : https://www.scaledrone.com/docs/api-clients/javascript
+
 const CLIENT_ID = 'Xi0hxG9O2H0HPRmM';
 
 const drone = new ScaleDrone(CLIENT_ID, {
@@ -53,9 +57,9 @@ const drone = new ScaleDrone(CLIENT_ID, {
   },
 });
 
-let members = [];
+let members = []; // an empty array willing to take as many members that are "plugged in" to this particular address
 
-drone.on('open', error => {
+drone.on('open', error => { // when a connection is actually established
   if (error) {
     return console.error(error);
   }
@@ -64,30 +68,30 @@ drone.on('open', error => {
   const room = drone.subscribe('observable-room');
   room.on('open', error => {
     if (error) {
-      return console.error(error);
+      return console.error(error);// server side room creation
     }
     console.log('Successfully joined room');
   });
 
   room.on('members', m => {
     members = m;
-    updateMembersDOM();
+    updateMembersDOM(); //show memembers upon room creation
   });
 
   room.on('member_join', member => {
-    members.push(member);
+    members.push(member); // add new members who may join after the connection has been established
     updateMembersDOM();
   });
 
   room.on('member_leave', ({id}) => {
     const index = members.findIndex(member => member.id === id);
-    members.splice(index, 1);
+    members.splice(index, 1); // remove new members who may join after the connection has been established
     updateMembersDOM();
   });
 
   room.on('data', (text, member) => {
     if (member) {
-      addMessageToListDOM(text, member);
+      addMessageToListDOM(text, member); // add message to data collection for it to be printed to the DOM
     } else {
       // Message is from server
     }
@@ -95,13 +99,15 @@ drone.on('open', error => {
 });
 
 drone.on('close', event => {
-  console.log('Connection was closed', event);
+  console.log('Connection was closed', event); // in the case, the drone websocket connection gets closed
 });
 
 drone.on('error', error => {
   console.error(error);
 });
 
+ // this getRandomName function can easily be replaced with the username later and possibly add more fields to the signup section
+ // although random names do protect peoples idenities
 function getRandomName() {
   const adjs = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"];
   const nouns = ["waterfall", "river", "breeze", "moon", "rain", "wind", "sea", "morning", "snow", "lake", "sunset", "pine", "shadow", "leaf", "dawn", "glitter", "forest", "hill", "cloud", "meadow", "sun", "glade", "bird", "brook", "butterfly", "bush", "dew", "dust", "field", "fire", "flower", "firefly", "feather", "grass", "haze", "mountain", "night", "pond", "darkness", "snowflake", "silence", "sound", "sky", "shape", "surf", "thunder", "violet", "water", "wildflower", "wave", "water", "resonance", "sun", "wood", "dream", "cherry", "tree", "fog", "frost", "voice", "paper", "frog", "smoke", "star"];
@@ -116,7 +122,7 @@ function getRandomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
-//------------- DOM STUFF
+// // // all of the references we need to see on the DOM // // //
 
 const DOM = {
   membersCount: document.querySelector('.members-count'),
@@ -126,10 +132,10 @@ const DOM = {
   form: document.querySelector('.message-form'),
 };
 
-DOM.form.addEventListener('submit', sendMessage);
+DOM.form.addEventListener('submit', sendMessage); // event listener for the submit button fire the function 'sendMessage'
 
 function sendMessage() {
-  const value = DOM.input.value;
+  const value = DOM.input.value; // takes the user member,room, and text message and post/publish it on to the DOM
   if (value === '') {
     return;
   }
@@ -143,14 +149,14 @@ function sendMessage() {
 function createMemberElement(member) {
   const { name, color } = member.clientData;
   const el = document.createElement('div');
-  el.appendChild(document.createTextNode(name));
+  el.appendChild(document.createTextNode(name)); // when a new member is added to the room
   el.className = 'member';
   el.style.color = color;
   return el;
 }
 
 function updateMembersDOM() {
-  DOM.membersCount.innerText = `${members.length} users in room:`;
+  DOM.membersCount.innerText = `${members.length} users in room:`; // update the user count of users currently in the room
   DOM.membersList.innerHTML = '';
   members.forEach(member =>
     DOM.membersList.appendChild(createMemberElement(member))
@@ -160,14 +166,14 @@ function updateMembersDOM() {
 function createMessageElement(text, member) {
   const el = document.createElement('div');
   el.appendChild(createMemberElement(member));
-  el.appendChild(document.createTextNode(text));
+  el.appendChild(document.createTextNode(text)); //attaining text and member info to add to the message collection and actually return the message and username on the DOM
   el.className = 'message';
   return el;
 }
 
 function addMessageToListDOM(text, member) {
   const el = DOM.messages;
-  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
+  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;  // take the message from sendMessage that was "sitting on the server-socket " and actually post that information to the DOM
   el.appendChild(createMessageElement(text, member));
   if (wasTop) {
     el.scrollTop = el.scrollHeight - el.clientHeight;

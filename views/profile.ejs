@@ -12,6 +12,7 @@
   <ul class="posts">
   <% for(var i=0; i<posts.length; i++) {%>
     <li>
+
       <a href="/post/<%= posts[i]._id%>">
         <img src="<%= posts[i].imgPath%>" id="postIMG">
       </a>
@@ -19,9 +20,8 @@
       <span id="postrow1a"> Financial Symbol: <%= posts[i].chartSymbol %></span>
 
       <span id="postrow1b"> Position: <%= posts[i].position %></span>
-      <section id="hearttrash">
+
         <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-      </section>
 
 
 
@@ -33,7 +33,7 @@
   <form action="/qpPost" enctype="multipart/form-data" method="post">
 
             <h2 id="move">Save your Trade Idea Here</h2>
-
+<p name="username" id="hide" > <%= user.local.email %></p>
 <section>
   <h3> Instrument and Position</h3>
   <p class="row1b"> Choose your financial instrument.</p>
@@ -68,7 +68,7 @@
 </section>
 
 <section id="tradestatus">
-  <h3> Trade Status (can be updated and changed)</h3>
+  <h3> Trade Status </h3>
   <select  name="status">
   <option value="WAITING"> WAITING </option>
   <option value="IN PROGRESS">  IN-PROGRESS </option>
@@ -90,18 +90,18 @@
     <p> Entry Condition #4: </p>
 
   <select  name="entryCond1">
-  <option value="DoubleTop"> Double Top/Double Bottom </option>
-  <option value="trendline">  Broken Trendline </option>
-  <option value="EngCandle"> Engulfing Candle </option>
-  <option value="EngCandle"> Engulfing Candle </option>
+    <option value="DoubleTop"> Double Top/Double Bottom </option>
+    <option value="trendline">  Broken Trendline </option>
+    <option value="EngCandle"> Engulfing Candle </option>
+    <option value="news"> News Report </option>
   </select>
 
 
   <select  name="entryCond2">
-  <option value="DoubleTop"> Double Top/Double Bottom </option>
-  <option value="trendline">  Broken Trendline </option>
-  <option value="EngCandle"> Engulfing Candle </option>
-  <option value="EngCandle"> Engulfing Candle </option>
+    <option value="DoubleTop"> Double Top/Double Bottom </option>
+    <option value="trendline">  Broken Trendline </option>
+    <option value="EngCandle"> Engulfing Candle </option>
+    <option value="news"> News Report </option>
   </select>
 
 
