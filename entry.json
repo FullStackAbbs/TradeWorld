@@ -1,0 +1,25 @@
+{{"_id":
+  {"$oid":"5e99b51ac527ad98b81480d4"},
+  "posterId":{"$oid":"5e992de9b13e618945705c10"},
+  "caption":"dbfnrdvscv",
+  "likes":{"$numberInt":"0"},
+"imageURL":"https://www.tradingview.com/x/MuCdqyHO/",
+"username":null,
+"chartSymbol":"EURUSD",
+"position":"BUY",
+"entry":"4322",                             "stoploss":"123",                             "takeprofit":"9876",
+                      "status":"WAITING",                             "winStatus":"WIN",
+                                               "entryCond1":"DoubleTop",
+                                                               "entryCond2":"DoubleTop",
+                                                                                        "entryCond3":"DoubleTop",
+"entryCond4":"DoubleTop",
+"risk":"4199.00",
+"reward":"5554.00", "riskReward":"0.76",
+ "imgPath":"images/uploads/file-to-upload-1587131674516.png"},
+
+{"_id":{"$oid":"5e99b5dec527ad98b81480d5"},                             "posterId":{"$oid":"5e992de9b13e618945705c10"},                             "caption":"With no relevant economic data scheduled for release in the North American session,                              EUR/USD stands to trade within a range and a decline in volatility appears likely.\r\n\r\nDownside support at 1.0830 was briefly breached but there has not been any follow-through. This could be a floor for the session ahead.Rallies in the session ahead are likely to be met with sellers considering the bearish price action throughout the week. The first hurdle to the upside is found at 1.0859. The same level previously held the pair higher earlier in the week. Major resistance is seen at 1.0905.\r\n\r\nIf sellers manage to drive the pair below support at 1.0831,                              the next area of interest falls at 1.0783 as the level offered support earlier this month and held the exchange rate higher in February.",                             "likes":{"$numberInt":"0"},                             "imageURL":"https://www.tradingview.com/x/MuCdqyHO/",                             "username":null,                             "chartSymbol":"AAPL",                             "position":"SELL",                             "entry":"2334",                             "stoploss":"111",                             "takeprofit":"6666",                             "status":"COMPLETED",                             "winStatus":"BREAKEVEN",                             "entryCond1":"EngCandle",                             "entryCond2":"trendline",                             "entryCond3":"news",                             "entryCond4":"news",                             "risk":"2223.00",                             "reward":"4332.00",                             "riskReward":"0.51",                             "imgPath":"images/uploads/file-to-upload-1587131870207.png"},
+
+{"_id":{"$oid":"5e9a0aa50159559c380b53f2"},                             "posterId":{"$oid":"5e992de9b13e618945705c10"},                             "caption":"What made me even trade ? ",                             "likes":{"$numberInt":"0"},                             "imageURL":"https://www.tradingview.com/x/r9wHyxvT/",                             "username":null,                             "chartSymbol":"EURUSD",                             "position":"SELL",                             "entry":"345",                             "stoploss":"600",                             "takeprofit":"200",                             "status":"IN PROGRESS",                             "winStatus":"BREAKEVEN",                             "entryCond1":"EngCandle",                             "entryCond2":"DoubleTop",                             "entryCond3":"DoubleTop",                             "entryCond4":"DoubleTop",                             "risk":"255.00",                             "reward":"145.00",                             "riskReward":"1.76",                             "imgPath":"images/uploads/file-to-upload-1587153573246.png"},
+
+{"_id":{"$oid":"5e9dde17cd70910017eed3f9"},                             "posterId":{"$oid":"5e9d4fb6705ead0017c4fccb"},                             "caption":"dvsfhewgw",                             "likes":{"$numberInt":"0"},                             "imageURL":"https://www.tradingview.com/x/NYyLxQP9/",                             "username":null,                             "chartSymbol":"AAPL",                             "position":"BUY",                             "entry":"453",                             "stoploss":"200",                             "takeprofit":"543",                             "status":"WAITING",                             "winStatus":"WIN",                             "entryCond1":"EngCandle",                             "entryCond2":"news",                             "entryCond3":"news",                             "entryCond4":"DoubleTop",                             "risk":"253.00",                             "reward":"90.00",                             "riskReward":"2.81",                             "imgPath":"images/uploads/file-to-upload-1587404311600.png"}
+}

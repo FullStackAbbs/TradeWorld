@@ -1,0 +1,35 @@
+
+{
+
+  "entryBank": {"_id":
+                {"$oid":"5e99b51ac527ad98b81480d4"},
+                "posterId":{"$oid":"5e992de9b13e618945705c10"},
+                "caption":"dbfnrdvscv",
+                 "likes":{"$numberInt":"0"},
+                "imageURL":"https://www.tradingview.com/x/MuCdqyHO/",
+                "username":null,
+                "chartSymbol":"EURUSD",
+                "position":"BUY",
+                "entry":"4322",
+                "stoploss":"123",
+                "takeprofit":"9876",
+                "status":"WAITING",
+                "winStatus":"WIN",
+                "entryCond1":"DoubleTop",
+                "entryCond2":"DoubleTop",
+                "entryCond3":"DoubleTop",
+                "entryCond4":"DoubleTop",
+                "risk":"4199.00",
+                "reward":"5554.00",
+                "riskReward":"0.76",
+                 "imgPath":"images/uploads/file-to-upload-1587131674516.png"},
+
+
+                 {"_id":{"$oid":"5e9dc513e02c4f0017e777f4"},"posterId":{"$oid":"5e9d4fb6705ead0017c4fccb"},"caption":"If we break down below the 1.08 level, then it opens up a move down to the 1.0650 level given enough time, just as the breaking of 1.09 to the upside allows the market to go looking towards the 1.10 level where I would expect a decent selling opportunity. This is a market that clearly is choppy, but it’s also obvious that the sellers continue to come in and push this market lower. Because of this, I like the idea of “fading the rallies” on short-term charts, and I am not looking for some type of major move in the short term, simply because this pair doesn’t typically move like that. What we have seen over the last couple of months has been a huge anomaly, as this is the type of market that can put you to sleep on most days. I believe that the downward pressure will continue to be a mainstay, it wouldn’t take a rally serious at all until we get above the 200 day EMA.","likes":{"$numberInt":"0"},"imageURL":"https://www.tradingview.com/x/KroGsAKt/","username":null,"chartSymbol":"USDJPY","position":"SELL","entry":"120","stoploss":"500","takeprofit":"100","status":"WAITING","winStatus":"BREAKEVEN","entryCond1":"trendline","entryCond2":"EngCandle","entryCond3":"news","entryCond4":"news","risk":"380.00","reward":"20.00","riskReward":"19.00","imgPath":"images/uploads/file-to-upload-1587397907783.png"},
+
+                 {"_id":{"$oid":"5e9a0aa50159559c380b53f2"},"posterId":{"$oid":"5e992de9b13e618945705c10"},"caption":"What made me even trade ? ","likes":{"$numberInt":"0"},"imageURL":"https://www.tradingview.com/x/r9wHyxvT/","username":null,"chartSymbol":"EURUSD","position":"SELL","entry":"345","stoploss":"600","takeprofit":"200","status":"IN PROGRESS","winStatus":"BREAKEVEN","entryCond1":"EngCandle","entryCond2":"DoubleTop","entryCond3":"DoubleTop","entryCond4":"DoubleTop","risk":"255.00","reward":"145.00","riskReward":"1.76","imgPath":"images/uploads/file-to-upload-1587153573246.png"}
+
+
+
+
+}

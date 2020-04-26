@@ -15,5 +15,39 @@
     "potential_answers": ["EURUSD", "EURJPY", "GBPAUD", "EURAUD"],
     "correct_answer": "EURJPY"
    }
-  ]
+ ],
+ "fakeData": [
+  {
+    "posterId":{"$oid":"5e992de9b13e618945705c10"},
+    "caption":"dbfnrdvscv",
+    "likes":{"$numberInt":"0"},
+    "imageURL":"https://www.tradingview.com/x/MuCdqyHO/",
+    "username":null,
+    "chartSymbol":"EURUSD",
+    "position":"BUY",
+    "entry":"4322","stoploss":"123","takeprofit":"9876","status":"WAITIN","winStatus":"WIN",
+    "entryCond1":"DoubleTop","entryCond2":"DoubleTop","entryCond3":"DoubleTop",
+    "entryCond4":"DoubleTop",
+    "risk":"4199.00",
+    "reward":"5554.00",
+    "riskReward":"0.76"
+  },
+  {
+   "posterId":{"$oid":"5e9d4fb6705ead0017c4fccb"},
+   "caption":"dvsfhewgw",
+    "likes":{"$numberInt":"0"},
+    "imageURL":"https://www.tradingview.com/x/NYyLxQP9/",
+  "username":null,
+  "chartSymbol":"AAPL",
+  "position":"BUY",
+   "entry":"453",
+   "stoploss":"200",
+    "takeprofit":"543",
+     "status":"WAITING",
+      "winStatus":"BREAKEVEN", "entryCond1":"EngCandle","entryCond2":"news",
+      "entryCond3":"news",
+      "entryCond4":"DoubleTop","risk":"253.00", "reward":"90.00","riskReward":"2.81"
+  }
+
+ ]
 }

@@ -1,0 +1,55 @@
+<%- include('header'); -%>
+
+
+
+<section id="statsSheet">
+  <div class="container2">
+    <h1>Current Stats:</h1>
+
+
+    <h3> Average Ratio</h3>
+    <p id="averageRatioEntry"></p>
+
+    <h3> Average Risk in Data Points</h3>
+    <p id="averageRiskEntry"></p>
+
+    <h3> Average Reward in Data Points</h3>
+    <p id="averageRewardEntry"></p>
+
+    <h4> # of Wins </h4>
+    <h4> # of Losses</h4>
+    <h4> # of Breakevens</h4>
+
+    <p id="winCountEntry"></p>
+    <h1 id="quwiCountEntry"></h1>
+    <p id="breakevenCountEntry"></p>
+
+    <!-- <button>Submit Answer</button>
+    <h6> </h6> -->
+  </div>
+
+</section>
+
+<section>
+  <h2> Feedback</h2>
+  <h4>Feedback based on Currents Stats</h4>
+  <p id="feedback"></p>
+
+</section>
+
+
+
+<section id="chatBody">
+  <h4>TradeWorld Community Chat</h4>
+  <h5>Please adhere to all guidlines, these name are to protect our users. Violators will be removed.</h5>
+
+  <div class="members-count">-</div>
+  <div class="members-list">-</div>
+  <div class="messages"></div>
+  <form class="message-form" onsubmit="return false;">
+    <input class="message-form__input" placeholder="Type a message.." type="text"/>
+    <input class="message-form__button" value="Send" type="submit"/>
+  </form>
+
+</section>
+<%- include('footer'); -%>

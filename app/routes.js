@@ -42,6 +42,18 @@ app.get('/feed', function(req, res) {
     })
 });
 
+
+app.get('/stats', function(req, res) {
+  // let uId=  {_id: postId} // some how only have user info come up , or recall ejs if statement
+    db.collection('posts').find().toArray((err, result) => {
+      if (err) return console.log(err)
+      res.render('stats.ejs', {
+        user : req.user,
+        posts: result
+      })
+    })
+});
+
 app.get('/learn', function(req, res) {
     db.collection('posts').find().toArray((err, result) => {
       if (err) return console.log(err)
