@@ -1,3 +1,5 @@
+
+
 <%- include('header'); -%>
 
 <body class="nav-md">
@@ -63,53 +65,235 @@
 
       <!-- page content -->
       <div class="right_col" role="main">
-
-        <div class="row">
-          <%= avgRatio %>
-          <%= avgRisk %>
-          <%= avgReward %>
-
-
+        <div class="">
+                    <div class="page-title">
+                      <div class="title_left">
+                        <h3>Personal Stats</h3>
+                      </div>
 
 
-            </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12  ">
+                        <div class="x_panel" style="height:600px;">
+<div class="x_title">
+<h2> <%= user.local.email %> your personal stats and @TradeBot feedback can be found below</h2>
+
+<div class="clearfix"></div>
+</div>
+<div class="x_content">
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-4 col-sm-6  "  >
+  <div class="pricing">
+  <div class="title" style="background-color: #007BFF">
+  <h2></h2>
+  <h1 style="font-size:30px;"><%= avgRatio %> </h1>
+  <span>the average amount risked in comparsion to the amount collected</span>
+  </div>
+  <div class="x_content">
+  <div class="">
+  <div class="pricing_features" style="min-height:80px">
+  <ul class="list-unstyled text-left">
+  <li style="margin-left:25%">
+    <!-- <i class="fa fa-check text-success" aria-hidden="true"></i> -->
+    <strong style="font-size:15px;">  Average Risk-to-Reward Ratio</strong></li>
+  <!-- <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Unlimited</strong> storage</li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> Limited <strong> download quota</strong></li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Cash on Delivery</strong></li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> All time <strong> updates</strong></li>
+  <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Unlimited</strong> access to all files</li>
+  <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Allowed</strong> to be exclusing per sale</li> -->
+  </ul>
+  </div>
+  </div>
+
+  </div>
+  </div>
+</div>
+
+<div class="col-md-4 col-sm-6  ">
+  <div class="pricing">
+  <div class="title" style="background-color: #ffc107;">
+  <h2></h2>
+  <h1 style="font-size:30px;"><%= avgRisk %> </h1>
+  <span>the average amount risked in pips or price points</span>
+  </div>
+  <div class="x_content">
+  <div class="">
+  <div class="pricing_features" style="min-height:80px">
+  <ul class="list-unstyled text-left">
+  <li style="margin-left:25%">
+    <!-- <i class="fa fa-check text-success" aria-hidden="true"></i> -->
+    <strong style="font-size:15px;">  Average Risk in Pips/Price Points</strong></li>
+  <!-- <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Unlimited</strong> storage</li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> Limited <strong> download quota</strong></li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Cash on Delivery</strong></li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> All time <strong> updates</strong></li>
+  <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Unlimited</strong> access to all files</li>
+  <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Allowed</strong> to be exclusing per sale</li> -->
+  </ul>
+  </div>
+  </div>
+
+  </div>
+  </div>
+</div>
+<div class="col-md-4 col-sm-6  ">
+  <div class="pricing">
+  <div class="title">
+  <h2></h2>
+  <h1 style="font-size:30px;"><%= avgReward %> </h1>
+  <span>the average amount collected in pips or price points</span>
+  </div>
+  <div class="x_content">
+  <div class="">
+  <div class="pricing_features" style="min-height:80px">
+  <ul class="list-unstyled text-left">
+  <li style="margin-left:25%">
+    <!-- <i class="fa fa-check text-success" aria-hidden="true"></i> -->
+    <strong style="font-size:15px;">  Average Reward in Pips/Price Points</strong></li>
+  <!-- <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Unlimited</strong> storage</li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> Limited <strong> download quota</strong></li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Cash on Delivery</strong></li>
+  <li><i class="fa fa-check text-success" aria-hidden="true"></i> All time <strong> updates</strong></li>
+  <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Unlimited</strong> access to all files</li>
+  <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Allowed</strong> to be exclusing per sale</li> -->
+  </ul>
+  </div>
+  </div>
+
+  </div>
+  </div></div>
+
+  <div class="col-md-4 col-sm-6  " style="margin-top:3%">
+    <div class="pricing">
+    <div class="title" style="background-color: #007BFF">
+    <h2></h2>
+    <h1 style="font-size:30px;"><%= winTally %> </h1>
+    <span>the number of trades marked as "WIN"</span>
+    </div>
+    <div class="x_content">
+    <div class="">
+    <div class="pricing_features" style="min-height:80px">
+    <ul class="list-unstyled text-left">
+    <li style="margin-left:40%">
+      <!-- <i class="fa fa-check text-success" aria-hidden="true"></i> -->
+      <strong style="font-size:15px;">  Trades Won</strong></li>
+    <!-- <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Unlimited</strong> storage</li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> Limited <strong> download quota</strong></li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Cash on Delivery</strong></li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> All time <strong> updates</strong></li>
+    <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Unlimited</strong> access to all files</li>
+    <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Allowed</strong> to be exclusing per sale</li> -->
+    </ul>
+    </div>
+    </div>
+
+    </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6  "  style="margin-top:3%">
+    <div class="pricing">
+    <div class="title" style="background-color: #ffc107;" >
+    <h2></h2>
+    <h1 style="font-size:30px;"><%= lossTally %> </h1>
+    <span>the number of trades marked as "LOSS"</span>
+    </div>
+    <div class="x_content">
+    <div class="">
+    <div class="pricing_features" style="min-height:80px">
+    <ul class="list-unstyled text-left">
+    <li style="margin-left:40%">
+      <!-- <i class="fa fa-check text-success" aria-hidden="true"></i> -->
+      <strong style="font-size:15px;">  Trades Loss</strong></li>
+    <!-- <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Unlimited</strong> storage</li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> Limited <strong> download quota</strong></li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Cash on Delivery</strong></li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> All time <strong> updates</strong></li>
+    <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Unlimited</strong> access to all files</li>
+    <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Allowed</strong> to be exclusing per sale</li> -->
+    </ul>
+    </div>
+    </div>
+
+    </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6  "  style="margin-top:3%">
+    <div class="pricing">
+    <div class="title">
+    <h2></h2>
+    <h1 style="font-size:30px;"><%= breakevenTally %> </h1>
+    <span>the number of trades marked as "BREAKEVEN"</span>
+    </div>
+    <div class="x_content">
+    <div class="">
+    <div class="pricing_features" style="min-height:80px">
+    <ul class="list-unstyled text-left">
+    <li style="margin-left:40%">
+      <!-- <i class="fa fa-check text-success" aria-hidden="true"></i> -->
+      <strong style="font-size:15px;">  Trades Unaffected</strong></li>
+    <!-- <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Unlimited</strong> storage</li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> Limited <strong> download quota</strong></li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> <strong>Cash on Delivery</strong></li>
+    <li><i class="fa fa-check text-success" aria-hidden="true"></i> All time <strong> updates</strong></li>
+    <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Unlimited</strong> access to all files</li>
+    <li><i class="fa fa-times text-danger" aria-hidden="true"></i> <strong>Allowed</strong> to be exclusing per sale</li> -->
+    </ul>
+    </div>
+    </div>
+
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="x_panel">
+<div class="x_title">
+<h2>Daily active users <small>Sessions</small></h2>
+<ul class="nav navbar-right panel_toolbox">
+<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<a class="dropdown-item" href="#">Settings 1</a>
+<a class="dropdown-item" href="#">Settings 2</a>
+</div>
+</li>
+<li><a class="close-link"><i class="fa fa-close"></i></a>
+</li>
+</ul>
+<div class="clearfix"></div>
+</div>
+<div class="x_content">
+<div class="bs-example" data-example-id="simple-jumbotron">
+<div class="jumbotron">
+<h1>Hello, world!</h1>
+<h2>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</h2>
+</div>
+</div>
+</div>
+</div>
+
+                      </div>
+                    </div>
+                  </div>
         </div>
       </div>
     </div>
-<section id="statsSheet">
-  <div class="container2">
-    <h1>Current Stats:</h1>
-
-
-    <h3> Average Ratio</h3>
-    <p id="averageRatioEntry"></p>
-
-    <h3> Average Risk in Data Points</h3>
-    <p id="averageRiskEntry"></p>
-
-    <h3> Average Reward in Data Points</h3>
-    <p id="averageRewardEntry"></p>
-
-    <h4> # of Wins </h4>
-    <h4> # of Losses</h4>
-    <h4> # of Breakevens</h4>
-
-    <p id="winCountEntry"></p>
-    <h1 id="quwiCountEntry"></h1>
-    <p id="breakevenCountEntry"></p>
-
-    <!-- <button>Submit Answer</button>
-    <h6> </h6> -->
-  </div>
-
-</section>
-
-<section>
-  <h2> Feedback</h2>
-  <h4>Feedback based on Currents Stats</h4>
-  <p id="feedback"></p>
-
-</section>
-
-
 <%- include('footer'); -%>

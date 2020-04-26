@@ -39,12 +39,26 @@ app.get('/stats',isLoggedIn,function (req,res){
     let avgRatioArr=[];
     let avgRiskArr=[];
     let avgRewardArr=[];
+    let winCount=0;
+    let breakevenCount=0;
+    let lossCount=0;
     for(let i=0;i<test.length;i++){
       avgRatioArr.push(parseFloat(test[i].riskReward))
       avgRiskArr.push(parseFloat(test[i].risk))
       avgRewardArr.push(parseFloat(test[i].reward))
+      if(test[i].winStatus === "WIN"){
+        winCount++
+      }if( test[i].winStatus === "LOSE"){
+        lossCount++
+      }if ( test[i].winStatus === "BREAKEVEN" ){
+        breakevenCount++
+      }
 
 
+
+      // winCount++
+      // lossCount++
+      // breakevenCount++
     }
     let sum = avgRatioArr.reduce((a,b) => a + b);
     let sum1 = avgRiskArr.reduce((a,b) => a + b);
@@ -62,6 +76,11 @@ app.get('/stats',isLoggedIn,function (req,res){
       avgRatio: actualAvgRatio,
       avgRisk : actualAvgRisk,
       avgReward: actualAvgReward,
+      winTally: winCount,
+      lossTally: lossCount,
+      breakevenTally: breakevenCount
+
+
     })
     // return console.log(actualAvgRatio)
   });
