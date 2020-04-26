@@ -42,23 +42,19 @@ app.get('/stats',isLoggedIn,function (req,res){
     let winCount=0;
     let breakevenCount=0;
     let lossCount=0;
+
+
     for(let i=0;i<test.length;i++){
       avgRatioArr.push(parseFloat(test[i].riskReward))
       avgRiskArr.push(parseFloat(test[i].risk))
       avgRewardArr.push(parseFloat(test[i].reward))
       if(test[i].winStatus === "WIN"){
         winCount++
-      }if( test[i].winStatus === "LOSE"){
+      }if( test[i].winStatus === "LOSS"){
         lossCount++
       }if ( test[i].winStatus === "BREAKEVEN" ){
         breakevenCount++
       }
-
-
-
-      // winCount++
-      // lossCount++
-      // breakevenCount++
     }
     let sum = avgRatioArr.reduce((a,b) => a + b);
     let sum1 = avgRiskArr.reduce((a,b) => a + b);
@@ -68,6 +64,8 @@ app.get('/stats',isLoggedIn,function (req,res){
     let actualAvgRisk = sum1/(test.length);
     let actualAvgRatio = sum/(test.length);
     let actualAvgReward = sum2/(test.length);
+    let msg =` Let's keep up the work. Now that you have progress in Risk Management, let's work on scaling. `
+
 
 
     if(err) return console.log(err)
@@ -78,11 +76,12 @@ app.get('/stats',isLoggedIn,function (req,res){
       avgReward: actualAvgReward,
       winTally: winCount,
       lossTally: lossCount,
-      breakevenTally: breakevenCount
+      breakevenTally: breakevenCount,
+      message : msg,
+
 
 
     })
-    // return console.log(actualAvgRatio)
   });
 
 })
