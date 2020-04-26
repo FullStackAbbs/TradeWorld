@@ -19,9 +19,7 @@ app.get('/', function(req, res) {
     res.render('index.ejs');
 });
 
-app.get('/stats', function(req, res) {
-    res.render('stats.ejs');
-});
+
 // PROFILE SECTION =========================
 app.get('/profile', isLoggedIn, function(req, res) {
     let uId = ObjectId(req.session.passport.user)
@@ -33,6 +31,43 @@ app.get('/profile', isLoggedIn, function(req, res) {
       })
     })
 });
+
+app.get('/stats',isLoggedIn,function (req,res){
+  let uId = ObjectId(req.session.passport.user)
+  var userCollection = db.collection('posts').find({'posterId': uId}).toArray((err,result) => {
+    let test= Array.from(result);
+    let avgRatioArr=[];
+    let avgRiskArr=[];
+    let avgRewardArr=[];
+    for(let i=0;i<test.length;i++){
+      avgRatioArr.push(parseFloat(test[i].riskReward))
+      avgRiskArr.push(parseFloat(test[i].risk))
+      avgRewardArr.push(parseFloat(test[i].reward))
+
+
+    }
+    let sum = avgRatioArr.reduce((a,b) => a + b);
+    let sum1 = avgRiskArr.reduce((a,b) => a + b);
+    let sum2 = avgRewardArr.reduce((a,b) => a + b);
+
+
+    let actualAvgRisk = sum1/(test.length);
+    let actualAvgRatio = sum/(test.length);
+    let actualAvgReward = sum2/(test.length);
+
+
+    if(err) return console.log(err)
+    if(result) res.render('stats.ejs',{
+      user: req.user,
+      avgRatio: actualAvgRatio,
+      avgRisk : actualAvgRisk,
+      avgReward: actualAvgReward,
+    })
+    // return console.log(actualAvgRatio)
+  });
+
+})
+
 
 // FEED PAGE =========================
 app.get('/feed', function(req, res) {

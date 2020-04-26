@@ -65,43 +65,13 @@
       <div class="right_col" role="main">
 
         <div class="row">
+          <%= avgRatio %>
+          <%= avgRisk %>
+          <%= avgReward %>
 
-        <ul class="posts" style ="width:100%">
-          <% for(var i=0; i<posts.length; i++) {%>
-            <li>
 
-              <!-- <div class="col-md-6 col-sm-8 ">
-                <div class="x_panel tile fixed_height_320">
-  <div class="x_title">
-  <h2>Trade Log Entry <%= i+1 %></h2>
 
-  <div class="clearfix"></div>
-  </div>
-  <div class="x_content">
-  <div class="dashboard-widget-content">
-  <ul class="quick-list">
-    <li >  <img style="display:none" src="<%= posts[i].imgPath%>" id="postIMG"> </li>
-  <li><i class="fa fa-calendar-o"></i><a href="/post/<%= posts[i]._id%>">Financial Symbol:  <%= posts[i].chartSymbol %> </a></li>
-  <li><i class="fa fa-bars"></i><a href="/post/<%= posts[i]._id%>">Position:  <%= posts[i].position %></a>
-    <li><i class="fa fa-arrows-v"></i><a href="/post/<%= posts[i]._id%>">Risk-to-Reward Ratio:  <%= posts[i].riskReward %></a>
-      <li><i class="fa fa-flag-checkered"></i><a href="/post/<%= posts[i]._id%>"> Status:  <%= posts[i].winStatus %></a>
 
-  <li></li>
-  </ul>
-  <div class="sidebar-widget">
-    <a href="/post/<%= posts[i]._id%>">
-  <img src="<%= posts[i].imgPath%>" id="chart_gauge_01" width="150" height="80" style="width: 200px; height: 165px;"></a>
-  <div class="goal-wrapper">
-
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-              </div> -->
-            </li>
-            <% } %>
-            </ul>
             </div>
         </div>
       </div>
