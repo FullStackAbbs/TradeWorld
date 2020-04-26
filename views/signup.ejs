@@ -1,32 +1,67 @@
 <%- include('header'); -%>
-  <div class="container">
-    <div class="col-sm-6 col-sm-offset-3">
 
-        <h1><span class="fa fa-sign-in"></span> Signup</h1>
+<body class="login">
+  <div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
 
-        <% if (message.length > 0) { %>
-            <div class="alert alert-danger"><%= message %></div>
-        <% } %>
-
-        <!-- LOGIN FORM -->
-        <form action="/signup" method="post">
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" name="email">
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <form action="/signup" method="post">
+            <h1>Sign Up: </h1>
+            <div>
+              <input type="text" class="form-control" name="email">
             </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password">
+            <div>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-success btn-lg" style="color:white;" style="font-size:20px;">Sign Up</button>
             </div>
 
-            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-        </form>
+            <div class="clearfix"></div>
 
-        <hr>
+            <div class="separator">
+              <!-- <p class="change_link">New to site?
+                <a href="/signup"class="to_register"> Create Account </a>
+              </p> -->
 
-        <p>Already have an account? <a href="/login">Login</a></p>
-        <p>Or go <a href="/">home</a>.</p>
+              <div class="clearfix">
+                <hr>
+
+                <p>Already have an account? <a href="/login">Login</a></p>
+                <p>Or go <a href="/">home</a></p>
+
+
+              </div>
+              <br />
+
+              <div>
+                <!-- <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p> -->
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+
 
     </div>
   </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%- include('footer'); -%>

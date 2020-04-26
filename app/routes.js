@@ -19,6 +19,9 @@ app.get('/', function(req, res) {
     res.render('index.ejs');
 });
 
+app.get('/stats', function(req, res) {
+    res.render('stats.ejs');
+});
 // PROFILE SECTION =========================
 app.get('/profile', isLoggedIn, function(req, res) {
     let uId = ObjectId(req.session.passport.user)
@@ -36,18 +39,6 @@ app.get('/feed', function(req, res) {
     db.collection('posts').find().toArray((err, result) => {
       if (err) return console.log(err)
       res.render('feed.ejs', {
-        user : req.user,
-        posts: result
-      })
-    })
-});
-
-
-app.get('/stats', function(req, res) {
-  // let uId=  {_id: postId} // some how only have user info come up , or recall ejs if statement
-    db.collection('posts').find().toArray((err, result) => {
-      if (err) return console.log(err)
-      res.render('stats.ejs', {
         user : req.user,
         posts: result
       })
@@ -109,12 +100,19 @@ app.post('/qpPost', upload.single('file-to-upload'), (req, res, next) => {
          })
          });
 
-app.put('/posts', (req, res) => {
-  db.collection('posts')
-  .findOneAndUpdate({likes: 0}, {
+
+app.delete('/delete', (req, res) => {
+  db.collection('posts').findOneAndDelete({imgPath: req.body.imgPath}, (err, result) => {
+    if (err) return res.send(500, err)
+    res.send('Message deleted!')
+  })
+})
+
+app.put('/thumbUp', (req, res) => {
+  db.collection('data')
+  .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
     $set: {
-      heart: true,
-      likes :req.body.likes + 1
+      thumbUp:req.body.thumbUp + 1
     }
   }, {
     sort: {_id: -1},
@@ -122,13 +120,6 @@ app.put('/posts', (req, res) => {
   }, (err, result) => {
     if (err) return res.send(err)
     res.send(result)
-  })
-})
-
-app.delete('/delete', (req, res) => {
-  db.collection('posts').findOneAndDelete({imgPath: req.body.imgPath}, (err, result) => {
-    if (err) return res.send(500, err)
-    res.send('Message deleted!')
   })
 })
 

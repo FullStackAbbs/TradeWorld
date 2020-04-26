@@ -1,47 +1,161 @@
 <%- include('header'); -%>
-<ul class="posts">
-<% for(var i=0; i<posts.length; i++) {%>
+
+<%- include('header'); -%>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="/" class="site_title"><i class="fa fa-area-chart"></i> <span>TradeWorld</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+
+
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a href="/profile"><i class="fa fa-home"></i> Home </a>
+
+                </li>
+                <li> <a href="/feed"><i class="fa fa-users"></i> Community </a>
+
+                </li>
+                <li><a href="/learn"><i class="fa fa-mortar-board"></i> Learn </a>
+
+                </li>
+
+                <!-- <li><a a href="/stats"><i class="fa fa-bar-chart-o"></i> Trade Stats </a>
+
+                </li> -->
+
+              </ul>
+            </div>
+
+
+          </div>
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+  <div class="page-title">
+  <div class="title_left">
+  <h3> Trade Entry  <small> </small></h3>
+  </div>
+
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <ul class="posts">
+    <% for(var i=0; i<posts.length; i++) {%>
+      <li>
+  <div class="col-md-12">
+  <div class="x_panel">
+  <div class="x_title">
+  <h2> Post #1 </h2>
+
+  <div class="clearfix"></div>
+  </div>
+  <div class="x_content" style="height:1000px;">
+  <div class="col-md-9 col-sm-9  ">
+  <ul class="stats-overview">
   <li>
-    <p class="titleB">Chart Symbol:</p>
-    <p class="titleB">Position:</p>
-    <span class="returnB"><%= posts[i].chartSymbol %></span>
-    <span class="returnB"><%= posts[i].position %></span>
-
-    <a href="/post/<%= posts[i]._id%>">
-      <img src="<%= posts[i].imageURL%>" class="feedimg">
-    </a>
-    <h3 class="headerBig"> Chart Comments:</h3>
-    <span id="caption"><%= posts[i].caption %></span>
-    <h3 class="headerBig"> Price Points</h3>
-    <p class="titleC"> Entry Price: </p>
-    <p class="titleC"> Exit Price - Take Proft: </p>
-    <p class="titleC"> Exit Price - Stop Loss: </p>
-    <span class="returnC"><%= posts[i].entry %></span>
-    <span class="returnC"><%= posts[i].stoploss %></span>
-    <span class="returnC"><%= posts[i].takeprofit %></span>
-
-
-
-<h3 class="headerBig"> Entry Conditions:</h3>
-<p class="titleE"> Entry Condition #1: </p>
-<p class="titleE"> Entry Condition #2: </p>
-  <p class="titleE"> Entry Condition #3: </p>
-  <p class="titleE"> Entry Condition #4: </p>
-    <span class="returnE"  ><%= posts[i].entryCond1 %></span>
-    <span class="returnE" ><%= posts[i].entryCond2 %></span>
-    <span class="returnE"><%= posts[i].entryCond3 %></span>
-    <span class="returnE"><%= posts[i].entryCond4 %></span>
-
-    <h3 class="headerBig"> Trade Statistics </h3>
-    <!-- <p class="titleC"> Risk </p>
-    <p class="titleC"> Reward</p> -->
-    <p class="titleD"> Risk to Reward Ratio</p>
-    <!-- <span class="returnC"><%= posts[i].risk %></span>
-    <span class="returnC"><%= posts[i].reward %></span> -->
-    <span class="returnD"><%= posts[i].riskReward %></span>
-
+  <span class="name"> Chart Symbol</span>
+  <span class="value text-success"> <%= posts[i].chartSymbol %> </span>
   </li>
+  <li>
+  <span class="name"> Position </span>
+  <span class="value text-success"><%= posts[i].position %> </span>
+  </li>
+  <li class="hidden-phone">
+  <span class="name"> Risk-to-Reward Ratio </span>
+  <span class="value text-success"> <%= posts[i].riskReward %> </span>
+  </li>
+  </ul>
+  <br>
+  <div id="mainb" style="height: 350px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative; background-color: transparent;" _echarts_instance_="ec_1587855160332">
+    <a href="/post/<%= posts[i]._id%>">
+  <img src="<%= posts[i].imageURL%>" id="chart_gauge_01" width="100%" height="900px" ></a>
+
+    <div></div>
+  </div>
+
+  </div>
+
+  <div class="col-md-3 col-sm-3  ">
+  <section class="panel">
+  <div class="x_title">
+  <h2>Chart Description</h2>
+  <div class="clearfix"></div>
+  </div>
+  <div class="panel-body">
+  <p> <%= posts[i].caption %></p>
+  <br>
+   <div class="project_detail">
+  <p class="title">Entry Price:</p>
+  <p> <%= posts[i].entry %> </p>
+  <div class="project_detail">
+ <p class="title">Stoploss Price:</p>
+ <p> <%= posts[i].stoploss %> </p>
+ <div class="project_detail">
+<p class="title">TakeProfit Price:</p>
+<p> <%= posts[i].takeprofit %> </p>
+
+  </div>
+  <br>
+  <h5>Entry Conditions</h5>
+  <ul class="list-unstyled project_files">
+  <li> <i class="fa fa-check-circle"></i> Entry Condition #1: <%= posts[i].entryCond1 %> </li>
+  <li> <i class="fa fa-check-circle"></i> Entry Condition #2: <%= posts[i].entryCond2 %> </li>
+  <li> <i class="fa fa-check-circle"></i> Entry Condition #3: <%= posts[i].entryCond3 %> </li>
+  <li> <i class="fa fa-check-circle"></i> Entry Condition #4: <%= posts[i].entryCond4 %> </li>
+
+
+  </ul>
+  <br>
+
+  </div>
+  </section>
+  </div>
+
+  </div>
+  </div>
+  </div>
+</li>
 <% } %>
 </ul>
+
+  </div>
+  </div>
+                          </div>
+                        </div>
+
+                    </div>
+
+
+        <!-- </div> -->
 
 <%- include('footer'); -%>

@@ -1,63 +1,113 @@
 <%- include('header'); -%>
 
-  <h1>Welcome to the TradeWorld Community</h1>
-  <h4> Below your will see trading ideas of not just you but everyone on TW !</h4>
-  <h4> Feel free to chat and get to know your community members</h4>
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="/" class="site_title"><i class="fa fa-area-chart"></i> <span>TradeWorld</span></a>
+          </div>
 
-<section id="feedpost">
-  <ul class="posts">
-  <% for(var i=0; i<posts.length; i++) {%>
-    <li>
-      <p name="username" id="username"> <%= user.local.email %></p>
-      <a href="/post/<%= posts[i]._id%>">
-        <img class="feedimg"src="<%= posts[i].imageURL%>">
-      </a>
-      <div class="info">
-        <p class="infoA" id="titleA"> Chart Symbol:</p>
-        <p class="infoA" id="titleA"> Position:</p>
-        <span class="infoA" id="returnA"><%= posts[i].chartSymbol %></span>
-        <span class="infoA" id="returnA"><%= posts[i].position %></span>
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="img/favicon-96x96.png" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>Welcome,</span>
+              <h2><%= user.local.email %></h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a href="/profile"><i class="fa fa-home"></i> Home </a>
+
+                </li>
+                <li> <a href="/feed"><i class="fa fa-users"></i> Community </a>
+
+                </li>
+                <li><a href="/learn"><i class="fa fa-mortar-board"></i> Learn </a>
+
+                </li>
+
+                <!-- <li><a a href="/stats"><i class="fa fa-bar-chart-o"></i> Trade Stats </a>
+
+                </li> -->
+
+              </ul>
+            </div>
 
 
+          </div>
+          <!-- /sidebar menu -->
 
-<p class="infoA" id="titleA">Risk to Reward Ratio: </p>
-<p class="infoA" id="titleA">Status:</p>
+          <!-- /menu footer buttons -->
 
-        <span class="infoA" id="returnA"><%= posts[i].riskReward %></span>
-        <span class="infoA" id="returnA"><%= posts[i].status %></span>
-
-
-
-        <!-- <span><%= posts[i].likes %></span>
-        <% if(posts[i].heart === true){ %>
-        <span class="red"><i class="fa fa-heart" aria-hidden="true"></i></span>
-          <% } else { %>
-        <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-        <% } %> -->
-        </li>
-        <% } %>
-        </ul>
+          <!-- /menu footer buttons -->
+        </div>
       </div>
 
+      <!-- top navigation -->
+
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+
+        <div class="row">
+
+        <ul class="posts" style ="width:100%">
+          <% for(var i=0; i<posts.length; i++) {%>
+            <li>
+              <div class="col-md-6 col-sm-8 ">
+                <div class="x_panel tile fixed_height_320">
+  <div class="x_title">
+  <h2>Trade Log Entry <%= i+1 %></h2>
+
+  <div class="clearfix"></div>
+  </div>
+  <div class="x_content">
+  <div class="dashboard-widget-content">
+  <ul class="quick-list">
+    <li >  <img style="display:none" src="<%= posts[i].imgPath%>" id="postIMG"> </li>
+  <li><i class="fa fa-calendar-o"></i><a href="/post/<%= posts[i]._id%>">Financial Symbol:  <%= posts[i].chartSymbol %> </a></li>
+  <li><i class="fa fa-bars"></i><a href="/post/<%= posts[i]._id%>">Position:  <%= posts[i].position %></a>
+    <li><i class="fa fa-arrows-v"></i><a href="/post/<%= posts[i]._id%>">Risk-to-Reward Ratio:  <%= posts[i].riskReward %></a>
+      <li><i class="fa fa-flag-checkered"></i><a href="/post/<%= posts[i]._id%>"> Status:  <%= posts[i].winStatus %></a>
+
+  <li></li>
+  </ul>
+  <div class="sidebar-widget">
+    <a href="/post/<%= posts[i]._id%>">
+  <img src="<%= posts[i].imgPath%>" id="chart_gauge_01" width="150" height="80" style="width: 200px; height: 165px;"></a>
+  <div class="goal-wrapper">
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+              </div>
+            </li>
+            <% } %>
+            </ul>
+            </div>
+        </div>
+      </div>
+    </div>
 
 
 
 
 
-</section>
-
-
-<section id="chatBody">
-  <h4>TradeWorld Community Chat</h4>
-  <h5>Please adhere to all guidlines, these name are to protect our users. Violators will be removed.</h5>
-
-  <div class="members-count">-</div>
-  <div class="members-list">-</div>
-  <div class="messages"></div>
-  <form class="message-form" onsubmit="return false;">
-    <input class="message-form__input" placeholder="Type a message.." type="text"/>
-    <input class="message-form__button" value="Send" type="submit"/>
-  </form>
-
-</section>
 <%- include('footer'); -%>

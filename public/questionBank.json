@@ -18,7 +18,7 @@
  ],
  "fakeData": [
   {
-    "posterId":{"$oid":"5e992de9b13e618945705c10"},
+    "posterId": {"$oid":"5e992de9b13e618945705c10"},
     "caption":"dbfnrdvscv",
     "likes":{"$numberInt":"0"},
     "imageURL":"https://www.tradingview.com/x/MuCdqyHO/",
