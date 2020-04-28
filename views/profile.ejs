@@ -239,15 +239,15 @@
                     <div class="form-group row">
                       <label class="col-form-label col-md-1 col-sm-12 ">Entry</label>
                       <div class="col-md-3 col-sm-12 ">
-                        <input type="number" name="entry" step="0.00001"  placeholder="" value="">
+                        <input type="number" name="entry" step="0.00001"  placeholder="" value="" required>
                       </div>
                       <label class="col-form-label col-md-1 col-sm-12 ">Stop Loss</label>
                       <div class="col-md-3 col-sm-12 ">
-                        <input type="number" name="stoploss" step="0.00001" placeholder="" value="">
+                        <input type="number" name="stoploss" step="0.00001" placeholder="" value="" required>
                       </div>
                       <label class="col-form-label col-md-1 col-sm-12 ">Take Profit</label>
                       <div class="col-md-3 col-sm-12 ">
-                        <input type="number" name="takeprofit" step="0.00001" placeholder=""  value="">
+                        <input type="number" name="takeprofit" step="0.00001" placeholder=""  value="" required>
                       </div>
                     </div>
 
@@ -341,7 +341,7 @@
 
                             <div class="btn-group">
                               <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                              <input type="file" name="file-to-upload" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                              <input type="file" name="file-to-upload" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" required>
                             </div>
 
 
@@ -370,7 +370,7 @@
                       <label class="col-form-label col-md-3 col-sm-3 ">Image URL <span class="required">*</span>
                       </label>
                       <div class="col-md-9 col-sm-9 ">
-                        <input name="imageURL"  placeholder="imageURL" value="" type="text">
+                        <input name="imageURL"  placeholder="imageURL" value="" type="text" required>
                       </div>
                     </div>
                     <div class="ln_solid"></div>
